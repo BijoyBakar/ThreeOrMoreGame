@@ -6,6 +6,7 @@ namespace ThreeOrMoreGame;
 /// </summary>
 internal class Users
 {
+    
     // fields/variables 
     private int UserID;
     public int Userid

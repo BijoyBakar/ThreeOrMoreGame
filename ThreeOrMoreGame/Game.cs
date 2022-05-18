@@ -11,6 +11,7 @@ namespace ThreeOrMoreGame;
         /// this method is responsible for returning a list of integers that are displayed once the user rolls the dice
         /// </summary>
         /// <returns>Dice_results</returns>
+        /// 
         public static List<int> Roll_Dice()
         {
             // list containing all the new values for the dices that have been rolled by the user 

@@ -13,7 +13,6 @@ internal class Dice
     {
         get { return DiceSides; }
     }
-
     // generates a random number between 1 and the set number of dice faces and return its 
     public int rollDie()
     {
