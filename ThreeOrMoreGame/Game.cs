@@ -139,7 +139,7 @@ namespace ThreeOrMoreGame;
                     // the numbers that are re rolled are stored and printed out 
                     int dieface = diceList[x].rollDie();
                     Re_roll_results.Add(dieface);
-                    Console.WriteLine("Dice: " + (counter + 1) + " " + dieface + " ");
+                    Console.WriteLine("Dice " + (counter + 1) + ": " + dieface + " ");
                     counter++;
                 }
             }
