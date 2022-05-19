@@ -5,8 +5,6 @@ namespace ThreeOrMoreGame;
     internal class Game
     {
         
-        
-        
         /// <summary>
         /// this method is responsible for returning a list of integers that are displayed once the user rolls the dice
         /// </summary>
@@ -16,7 +14,6 @@ namespace ThreeOrMoreGame;
         {
             // list containing all the new values for the dices that have been rolled by the user 
             List<int> Dice_results = new List<int>();
-            // creating multiple dice objects from the class dice and assigning different integers 
             Dice Dice_1 = new Dice();
             Dice Dice_2 = new Dice();
             Dice Dice_3 = new Dice();
@@ -54,10 +51,21 @@ namespace ThreeOrMoreGame;
 
             while (true)
             {
-                // user is told to enter the number of players
-                Console.WriteLine("Please enter the number of players");
-                NumPlayers = Convert.ToInt32(Console.ReadLine());
-                break;
+                // asks the users to enter the number of players
+                Console.Write("Please enter the number of players: ");
+                try
+                {
+                    // the number of players is then stored in the numplayers variable 
+                    NumPlayers = Int32.Parse(Console.ReadLine());
+                    break;
+                }
+                // throws exceptions for invalid inputs 
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+                
             }
 
             // for loops iterates through the number of players and asks them their username 
@@ -92,13 +100,12 @@ namespace ThreeOrMoreGame;
         /// </summary>
         /// <param name="repeatedTwice"></param>
         /// <returns>Re_roll_results</returns>
-        private static List<int> Reroll(int Value_repeated)
+        private static List<int> Roll_Dice(int Value_repeated)
         {
             // counts the number of dice rolled. It is displayed after every dice to let the user know which dice rolled which value
             int counter = 0;
             // list containing all the new values for the dices that have been rolled by the user 
             List<int> Re_roll_results = new List<int>();
-            // creating multiple dice objects from the class dice and assigning different integers 
             Dice Dice_1 = new Dice();
             Dice Dice_2 = new Dice();
             Dice Dice_3 = new Dice();
@@ -113,6 +120,7 @@ namespace ThreeOrMoreGame;
                 Dice_4, 
                 Dice_5
             };
+            
             int dicecount = diceList.Count;
             // The 5 dice are re-rolled again and are printed out in order the results are then added to the lists and printed out.
             for (int x = 0; x < dicecount; x++)
@@ -223,9 +231,15 @@ namespace ThreeOrMoreGame;
                     counter++;
                     // the dices are then re rolled except the number which appears 2 times.This value is kept the same
                     // and then the dice values go through the get score method again to attain the new score for the user
-                    List<int> NewValues = Reroll(ValueRepeated);
+                    List<int> NewValues = Roll_Dice(ValueRepeated);
                     Scoreing(NewValues,counter,users);
 
+
+                }
+                // if the user does not score any points in the re roll then the 0 points message is displayed
+                else
+                {
+                    Console.WriteLine("You scored 0 points this round");
 
                 }
             }

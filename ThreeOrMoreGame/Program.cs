@@ -50,7 +50,7 @@ while (true)
                 if (winningpoint >= 50)
                 {
                     Console.WriteLine(" ");
-                    Console.WriteLine("The Winner is "+player.username);
+                    Console.WriteLine("The WINNER is "+player.username+", congrats!");
                     Console.WriteLine(" ");
                     Console.WriteLine("Leaderboard");
                     // a leaderboard with all the players and the score is presented 
